@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+.ui-growl {
+	top: 80px;
+}
+
+.ui-datepicker.ui-widget {
+	font-size: 11px;
+}
+
+.ui-dialog-content {
+	overflow: hidden !important;
+}
+
+.ui-widget-header {
+	font-size: 11px;
+}
+
+.preformatted {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.ui-datatable {
+	border: none;
+	font-size: 11px;
+	overflow: hidden;
+}
+
+.ui-datatable-tablewrapper {
+	border-radius: none;
+	overflow: hidden;
+	border: none;
+}
+
+.pnlTbl {
+	font-size: 14px;
+	width: auto;
+	position: fixed;
+	top: 60px;
+	overflow: none;
+	margin-right: -15px;
+	margin-left: -15px;
+	max-width: 110%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	padding: 0 0 0 0;
+	border-radius: 0 0 0 0;
+	border: none;
+}
+
+.ui-widget-header {
+	border: 0;
+}
+
+.ui-datatable.borderless, .ui-datatable.borderless tr, .ui-datatable.borderless td,
+	.ui-datatable.borderless tbody {
+	border-style: none;
+	overflow: hidden;
+	border: none;
+	/* 		overflow: none;	  */
+	margin-right: -14px;
+	margin-left: -14px;
+	margin-top: -8px;
+	/* 	box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 1.2); */
+}
+
+.ui-datatable.elegantTable, .ui-datatable.elegantTable tr, .ui-datatable.elegantTable td,
+	.ui-datatable.elegantTable tbody {
+	border-style: none;
+	overflow: hidden;
+	border: none;
+	/* 		overflow: none;	  */
+	margin-right: -14px;
+	margin-left: -14px;
+	margin-top: -8px;
+	background: transparent;
+}
+
+.ui-datatable.elegantTable tr:hover {
+	border: none; background : #85b2cb
+	url(/alfasys/javax.faces.resource/images/ui-bg_highlight-hard_80_85b2cb_1x100.png.blue?ln=primefaces-aristo)
+	50% 50% repeat-x;
+	background: #85b2cb linear-gradient(top, rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0));
+	background: #85b2cb
+		-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255,
+		0.6)), to(rgba(255, 255, 255, 0)));
+	background: #85b2cb -moz-linear-gradient(top, rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0));
+	font-weight: bold;
+	color: #313131;
+	-moz-box-shadow: 0 0 5px #85b2cb;
+	-webkit-box-shadow: 0 0 8px #85b2cb;
+	box-shadow: 0 0 8px #85b2cb;
+	background: #85b2cb
+		url(/alfasys/javax.faces.resource/images/ui-bg_highlight-hard_80_85b2cb_1x100.png.blue?ln=primefaces-aristo)
+		50% 50% repeat-x;
+}
+
+.ui-selectonemenu .ui-selectonemenu-label {
+	font-size: 11px;
+}
+
+.ui-selectonemenu-item {
+	font-size: 11px;
+}
+
+.image img {
+	-webkit-transition: all 1s ease; /* Safari and Chrome */
+	-moz-transition: all 1s ease; /* Firefox */
+	-ms-transition: all 1s ease; /* IE 9 */
+	-o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+}
+
+.image:hover img {
+	-webkit-transform: scale(1.35); /* Safari and Chrome */
+	-moz-transform: scale(1.35); /* Firefox */
+	-ms-transform: scale(1.35); /* IE 9 */
+	-o-transform: scale(1.35); /* Opera */
+	transform: scale(1.35);
+}
+
+.imageOS:hover img {
+	-webkit-transform: scale(2.35); /* Safari and Chrome */
+	-moz-transform: scale(2.35); /* Firefox */
+	-ms-transform: scale(2.35); /* IE 9 */
+	-o-transform: scale(2.35); /* Opera */
+	transform: scale(2.35);
+}
+
+@media screen and (max-width: 480px) {
+	.nomobile {
+		display: none;
+	}
+	.ui-panelgrid {
+		max-width: 280px;
+		font-size: 11px;
+	}
+	.diminui {
+		font-size: 11px
+	}
+	.combo {
+		font-size: 11px
+	}
+	.ui-selectonemenu .ui-selectonemenu-label {
+		font-size: 11px;
+		width: auto;
+	}
+	.ui-tabs-panel {
+		width: auto;
+	}
+	.ui-selectonemenu-trigger.ui-state-default.ui-corner-right {
+		width: auto;
+	}
+
+	/* 	.ui-button-text.ui-c { */
+	/* 		display: none; */
+	/* 		border: solid 1px; */
+	/* 		width: 15px; */
+	/* 	} */
+}
+
+.ui-selectonemenu-label.ui-inputfield.ui-corner-all.ui-selectonemenu-item
+	{
+	font-weight: bold;
+	-webkit-border-radius: none;
+}
+
+.ui-selectonemenu-label {
+	font-weight: bold;
+}
+
+.ui-selectonemenu {
+	display: flex !important;
+	min-width: 0 !important;
+	width: 220px;
+}
+
+.ui-inplace .ui-selectonemenu, .ui-inplace .ui-inputfield {
+	vertical-align: middle;
+}
+
+.ui-selectonemenu-trigger.ui-state-default.ui-corner-right {
+	width: auto;
+}
+
+.ui-panelgrid {
+	width: 450px;
+	font-size: 14px;
+}
+
+.combo {
+	width: 220px;
+}
+
+.comboFiltros {
+	width: auto;
+	font-size: 11px;
+}
+
+.ui-galleria-filmstrip-wrapper {
+	display: none;
+}
+
+.ql-toolbar {
+	font-size: 10px
+}

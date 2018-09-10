@@ -1,0 +1,204 @@
+/* required for navbar-fixed-top */
+body {
+	/* 	#font-family: 'Poppins', sans-serif; */
+	padding-top: 70px;
+	padding-bottom: 70px; /*for navbar-fixed-bottom*/
+	overflow: hidden;
+/* 	background-image: url("https://wallpaperbrowse.com/media/images/Blue-Background.jpeg"); */
+	/* 	font-size: 0.85em; */
+}
+
+/* Correct left margin */
+.navbar-header {
+	padding: 15px;
+	height: 5px;
+}
+
+#ui-growl1 {
+	position: fixed;
+	top: 180px;
+}
+
+.navbar .navbar-toggle {
+	position: relative;
+	z-index: 2;
+	min-height: 34px;
+	padding: 9px 5px;
+	border-color: transparent
+}
+
+.navbar-inner {
+    background:transparent;
+}
+
+.container {
+	width: auto;
+	max-width: 120%;
+}
+
+.navbar
+.navbar-toggle
+:hover
+,
+.navbar
+.navbar-toggle
+
+
+:focus
+,
+.navbar
+
+ 
+
+.navbar-toggle
+
+
+:not
+
+
+	
+
+(
+.collapsed
+
+ 
+
+)
+{
+background-color
+
+
+:
+
+ 
+
+transparent
+
+
+;
+border-color
+
+
+:
+
+ 
+
+transparent
+
+
+
+
+}
+.top-bar, .bottom-bar {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out
+}
+
+.navbar .navbar-toggle:not (.collapsed ) .top-bar {
+	position: absolute;
+	top: 46%;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg)
+}
+
+.navbar .navbar-toggle:not (.collapsed ) .middle-bar {
+	background-color: transparent
+}
+
+.navbar-brand {
+	padding: 0px; /* firefox bug fix */
+}
+
+.navbar-brand>img {
+	height: 80%;
+	padding: 5px; /* firefox bug fix */
+	width: auto;
+	border-radius: 10px;
+	/*   border: solid 1px; */
+	/*   background-color: white; */
+	top: 5px;
+	position: relative;
+}
+
+.navbar .navbar-nav .notification {
+	position: absolute;
+	background-color: #FB404B;
+	text-align: center;
+	border-radius: 10px;
+	min-width: 18px;
+	padding: 0 5px;
+	height: 18px;
+	font-size: 12px;
+	color: #FFFFFF;
+	font-weight: bold;
+	line-height: 18px;
+	top: 2px;
+	left: 20px;
+}
+
+.fixar {
+	position: absolute;
+	right: 100px !important;
+	top: 0;
+	width: 0;
+	display: block;
+	font-size:16px;
+}
+
+.fixar1 {
+	position: absolute;
+	right: 150px !important;
+	top: 0;
+	width: 0;
+	display: block;
+	font-size:16px;
+}
+
+.fixar2 {
+	position: absolute;
+	right: 200px !important;
+	top: 0;
+	width: 0;
+	display: block;
+	font-size:16px;
+}
+
+.fixar3 {
+	position: absolute;
+	right: 250px !important;
+	top: 0;
+	width: 0;
+	display: block;
+	font-size:16px;
+}
+
+.fixar4 {
+	position: absolute;
+	right: 100px !important;
+	top: 0;
+	width: 0;
+	display: block;
+	font-size:16px;
+}
+
+.navbar .navbar-toggle:not (.collapsed ) .bottom-bar .fixar {
+	position: absolute;
+	bottom: 46%;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg)
+}
+
+@media screen and (max-width:767px) {
+	#navbar {
+		display: none;
+	}
+	.fixar {
+		display: block;
+	}
+}

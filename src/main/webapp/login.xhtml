@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>AlfaSystem Login</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.9" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="icon" type="image/x-icon" href="asset-login/favo.png" />
+
+	<script type="text/javascript">
+		function defineScreenSize() {
+			document.getElementById('frmLogin:screenHeightSize').value = screen.height;
+			document.getElementById('frmLogin:screenWidthSize}').value = screen.width;
+			console.log("Height " + screen.height + " Width: " +  screen.width)
+		}
+	</script>
+
+
+</h:head>
+
+<h:body>
+
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		onsuccess="PF('statusDialog').hide()" widgetVar="ajaxStatus" />
+
+	<p:dialog widgetVar="statusDialog" modal="false" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		<div style="text-align: center">
+			<h:outputText value="Carregando..." />
+			<br /> <br />
+			<p:graphicImage url="asset-login/loading.gif" />
+		</div>
+	</p:dialog>
+
+
+
+	<h:form
+		onkeypress="if( event.keyCode == 13){document.getElementById('frmLogin:cmdLogin').click();}"
+		id="frmLogin">
+
+		<h:inputHidden id="screenHeightSize"
+			value="#{loginBean.heightScreenSize}" />
+			
+		<h:inputHidden id="screenWidthSize"
+			value="#{loginBean.widthScreenSize}" />
+
+		<p:dialog header="Login" visible="true" position="center"
+			responsive="true" fitViewport="false" resizable="false"
+			draggable="false"
+			style="min-height:300px;min-width:280px;max-width:500px;max-height:500px;width:auto;height:auto"
+			modal="true" closable="false">
+
+			<p:growl id="messages" showDetail="true" autoUpdate="true"
+				showSummary="true" life="1000" />
+			<p:focus for="userName" />
+			<p:graphicImage value="asset-login/user.png"
+				style="margin-left:90px;margin-bottom:20px;margin-top:20px;border-radius:80px;" />
+
+			<h:panelGrid columns="1">
+
+
+				<label><strong>Usuário</strong></label>
+
+				<p:inputText id="userName" styleClass="form-login" size="30"
+					value="#{loginBean.userId}" required="true" label="Usuário"
+					requiredMessage="Usuário é obrigatório" />
+				<br />
+
+				<label><strong>Senha</strong></label>
+
+				<p:password id="password" styleClass="form-login"
+					value="#{loginBean.userPassword}" required="true" size="30"
+					label="Senha" requiredMessage="Senha é obrigatória">
+					<f:converter
+						converterId="br.unicamp.fe.thinksim.util.CryptoConverter" />
+				</p:password>
+			</h:panelGrid>
+
+			<div style="float: right">
+				<br />
+				<p:commandButton update="@form messages" id="cmdLogin"
+					style="font-size:12px" styleClass="btnLogin" onclick="defineScreenSize()"
+					action="#{loginBean.login()}" process="@form" type="submit"
+					value="Login" />
+			</div>
+
+
+
+		</p:dialog>
+	</h:form>
+
+</h:body>
+</html>

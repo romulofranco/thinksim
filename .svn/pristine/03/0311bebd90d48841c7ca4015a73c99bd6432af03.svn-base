@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+	<ui:composition>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="mobile-web-app-capable" content="yes"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>ThinkSim - Social Network Simulator</title>
+
+ 		<link rel="shortcut icon"  href="images/logo.ico"/>
+
+		<!-- Bootstrap CSS CDN -->
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+		<!-- Bootstrap Js CDN -->
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+		<!-- Our Custom CSS -->
+		<link href="main/css/style-d.css" rel="stylesheet" />
+
+		<link href="main/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+		<script src="main/main.js?n=1"></script>
+		
+
+		<link href="main/css/forms.css" rel="stylesheet" />
+		
+
+	</ui:composition>
+</body>
+</html>

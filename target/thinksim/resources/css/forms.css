@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.ui-growl {
+	top: 80px;
+}
+
+.ui-datepicker.ui-widget {
+	font-size: 11px;
+}
+
+.ui-dialog-content {
+	overflow: hidden !important;
+}
+
+.ui-widget-header {
+	font-size: 11px;
+}
+
+.preformatted {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.ui-ui-datatable {
+	position: fixed;
+	bottom: 0;
+}
+
+.ui-datatable.borderless, .ui-datatable.borderless tr, .ui-datatable.borderless td
+	{
+	border-style: none;
+}
+
+.ui-selectonemenu .ui-selectonemenu-label {
+	font-size: 11px;
+}
+
+.ui-selectonemenu-item {
+	font-size: 11px;
+}
+
+.image img {
+	-webkit-transition: all 1s ease; /* Safari and Chrome */
+	-moz-transition: all 1s ease; /* Firefox */
+	-ms-transition: all 1s ease; /* IE 9 */
+	-o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+}
+
+.image:hover img {
+	-webkit-transform: scale(1.35); /* Safari and Chrome */
+	-moz-transform: scale(1.35); /* Firefox */
+	-ms-transform: scale(1.35); /* IE 9 */
+	-o-transform: scale(1.35); /* Opera */
+	transform: scale(1.35);
+}

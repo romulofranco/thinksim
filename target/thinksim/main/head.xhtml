@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body>
+	<ui:composition>
+		<h:form id="frmMainPanel">
+			<!-- 			<p:growl id="msgs" showDetail="true" autoUpdate="false" showSummary="false"/> -->
+			<nav class="navbar navbar-default ui-widget-header " role="navigation">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" id="sidebarBtn"
+						class="btn btn-info navbar-btn">
+						<i class="glyphicon glyphicon-align-left"></i>
+					</button>
+				</div>
+
+
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="#" style="font-size: 24px"><strong>#{screenBean.headTitle}</strong></a></li>
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown"><br /> <p:ajaxStatus
+								styleClass="dropdown-toggle" data-toggle="dropdown">
+								<f:facet name="start">
+									<p:graphicImage url="images/loading.gif" height="20px"
+										width="20px" />
+								</f:facet>
+							</p:ajaxStatus></li>
+						<li><a href="#" title="User settings"
+							onclick="PF('dlguserDash').show()"> <i class="fa fa-user"></i>
+						</a></li>
+						<li><a href="#" data-toggle="dropdown"> <i
+								class="fa fa-bell"></i> <b></b> <span class="notification">2</span>
+						</a>
+							<ul class="dropdown-menu">
+								<div style="height: 300px; overflow: auto"></div>
+							</ul></li>
+						<li><p:commandLink styleClass="a"
+								action="#{userManager.logout}" immediate="true" process="@this"
+								ajax="true" title="Logout" oncomplete="location.reload();">
+								<i class="fa fa-sign-out"></i>
+							</p:commandLink></li>
+					</ul>
+				</div>
+			</div>
+			</nav>
+		</h:form>
+
+		<p:dialog header="Usuário" closable="true" dynamic="false"
+			appendTo="@(body)" id="idDlguserDash" widgetVar="dlguserDash"
+			visible="false" minimizable="false" maximizable="false"
+			minWidth="680" width="680" modal="false" rendered="true"
+			style="overflow: hidden">
+			<h:form id="formEdituserDash">
+				<p:panel>
+					<p:tabView activeIndex="0">
+						<p:tab title="General">
+							<p:panelGrid columns="2" layout="grid" style="width: 100%"
+								columnClasses="forty-percent top-alignment, sixty-percent top-alignment;">
+								<h:outputLabel value="Usuário" for="id" />
+								<p:inputText id="id"
+									value="#{dashboardBean.userLogged.username}" size="30"
+									required="true" requiredMessage="Username is required" />
+
+								<h:outputLabel value="Nome" for="name" />
+								<p:inputText id="name" value="#{dashboardBean.userLogged.name}"
+									size="37" required="true" requiredMessage="Nome é obrigatório" />
+
+								<h:outputLabel value="Senha" for="pwd" />
+								<p:password id="pwd" redisplay="true"
+									value="#{dashboardBean.userLogged.password}" size="25"
+									required="true" requiredMessage="Senha é obrigatória">
+									<f:converter converterId="br.unicamp.fe.controller.converter.CryptoConverter" />
+								</p:password>
+
+								<h:outputLabel value="E-mail" for="email" />
+								<p:inputText id="email"
+									value="#{dashboardBean.userLogged.email}" size="37" />
+
+								<h:outputLabel value="Tipo de Acesso" for="type" />
+								<p:selectOneButton id="type"
+									value="#{dashboardBean.userLogged.type}" required="true"
+									requiredMessage="Access Type is missing">
+									<f:selectItem itemLabel="Admin" itemValue="admin" />
+									<f:selectItem itemLabel="User" itemValue="user" />
+								</p:selectOneButton>
+
+								<h:outputLabel value="Ativo" for="active" />
+								<p:selectOneButton id="active"
+									value="#{dashboardBean.userLogged.active}">
+									<f:selectItem itemLabel="Yes" itemValue="1" />
+									<f:selectItem itemLabel="No" itemValue="0" />
+								</p:selectOneButton>
+
+							</p:panelGrid>
+						</p:tab>
+						<p:tab title="Configurações">
+							<p:panelGrid columns="2" layout="grid" style="width: 100%"
+								columnClasses="forty-percent top-alignment, sixty-percent top-alignment;">
+
+								
+
+								<h:outputLabel value="Gerar notificações para favorito"
+									for="genfav" />
+								<p:selectOneButton id="genfav"
+									value="#{dashboardBean.userLogged.generateNotificationFav}">
+									<f:selectItem itemLabel="Yes" itemValue="1" />
+									<f:selectItem itemLabel="No" itemValue="0" />
+								</p:selectOneButton>
+							</p:panelGrid>
+						</p:tab>
+						<p:tab title="Aparência">
+							<p:panelGrid columns="2" layout="grid" style="width: 100%"
+								columnClasses="forty-percent top-alignment, sixty-percent top-alignment;">
+
+								<p:outputLabel for="theme" value="Theme:" />
+								<p:themeSwitcher id="theme" style="width:165px" effect="fade"
+									value="#{dashboardBean.userLogged.theme}">
+									<f:selectItems value="#{dashboardBean.themes}" />
+									<p:column>
+										<h:outputText styleClass="ui-theme ui-theme-"
+											style="display-block" />
+									</p:column>
+
+								</p:themeSwitcher>
+								<h:outputLabel value="Sidebar Color" for="sidebar" />
+								<p:selectOneButton id="sidebar"
+									value="#{dashboardBean.userLogged.sideBarColor}"
+									caseSensitive="false">
+									<f:selectItem itemLabel="Orange" itemValue="orange" />
+									<f:selectItem itemLabel="Azure" itemValue="azure" />
+									<f:selectItem itemLabel="Blue" itemValue="blue" />
+									<f:selectItem itemLabel="Green" itemValue="green" />
+									<f:selectItem itemLabel="Red" itemValue="red" />
+									<f:selectItem itemLabel="Purple" itemValue="purple" />
+									<f:selectItem itemLabel="Pink" itemValue="pink" />
+									<f:selectItem itemLabel="Dark" itemValue="dark" />
+									<f:selectItem itemLabel="Dark Red" itemValue="dark-red" />
+									<f:selectItem itemLabel="Dark Purple" itemValue="dark-purple" />
+									<f:selectItem itemLabel="Dark Blue" itemValue="dark-blue" />
+								</p:selectOneButton>
+							</p:panelGrid>
+						</p:tab>
+
+					</p:tabView>
+
+					<f:facet name="footer">
+						<p:commandButton icon="fa fa-check-circle" id="saveBtn"
+							actionListener="#{dashboardBean.saveUser}" value="Save"
+							process="@form" oncomplete="location.reload();" update="@form" />
+						<p:commandButton icon="fa fa-close"
+							onclick="PF('dlguserDash').hide()" value="Cancel" process="@this"
+							immediate="true" ajax="true" update="@form" />
+					</f:facet>
+
+				</p:panel>
+
+				<p:blockUI block="formEdituserDash" trigger="saveBtn">
+					<h:outputText value=" Loading..." />
+					<br />
+					<p:graphicImage url="images/loading.gif" />
+				</p:blockUI>
+
+			</h:form>
+		</p:dialog>
+
+		<p:dialog header="Legenda" closable="true" closeOnEscape="true"
+			position="center" responsive="true" widgetVar="dlgCaption"
+			width="500" id="idDlgCaption">
+			<p:dataTable var="item" value="#{screenBean.listCaption}" rows="12"
+				disabledSelection="true" paginator="false">
+				<p:column style="width:15px">
+					<p:graphicImage url="#{item.img}" width="20px" height="20px" />
+				</p:column>
+
+				<p:column headerText="Descrição" style="width:145px">
+					<h:outputText value="#{item.description}" style="font-weight: bold" />
+				</p:column>
+			</p:dataTable>
+			<f:facet name="footer">
+				<p:commandButton value="Fechar" onclick="PF('dlgCaption').hide()"
+					process="@this" immediate="true" ajax="true" />
+			</f:facet>
+		</p:dialog>
+
+
+
+	</ui:composition>
+</body>
+</html>
